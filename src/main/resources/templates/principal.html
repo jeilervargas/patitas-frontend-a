@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="https://thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Patitas - Adopta una mascota</title>
@@ -7,35 +8,34 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/principal.css}">
 </head>
+
 <body>
 
 <div class="container">
 
-    <form action="" method="post">
+    <div class="mt-5 mb-4">
+        <h1>Home</h1>
+    </div>
 
-        <div class="mt-5 mb-4">
-            <h1>Home</h1>
+    <div class="alert alert-success" role="alert" th:if="${loginModel.codigo == '00'}">
+        Bienvenido <span th:text="${loginModel.nombreUsuario}"></span>
+    </div>
+
+    <div class="mb-3">
+
+        <div class="list-group list-group-horizontal">
+
+            <a href="#" class="list-group-item list-group-item-action active">Home</a>
+            <a href="#" class="list-group-item list-group-item-action">Ver mascotas</a>
+            <a href="#" class="list-group-item list-group-item-action">Hacer donación</a>
+            <a href="#" class="list-group-item list-group-item-action">Cerrar sesión</a>
+
         </div>
 
-        <div class="alert alert-danger" role="alert" th:if="${loginModel.codigo == '00'}">
-            Bienvenido <span th:text="${loginModel.nombreUsuario}"></span>
-        </div>
-
-        <div class="mb-3">
-            <select id="tipoDocumento" name="tipoDocumento" class="form-select form-select-lg">
-                <option selected>Tipo documento</option>
-                <option value="1">DNI</option>
-                <option value="2">CEX</option>
-                <option value="3">PAS</option>
-            </select>
-
-        </div>
-
-
-
-    </form>
+    </div>
 
 </div>
 
 </body>
+
 </html>
