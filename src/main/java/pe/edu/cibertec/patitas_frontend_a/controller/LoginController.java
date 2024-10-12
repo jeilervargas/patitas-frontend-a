@@ -34,7 +34,10 @@ public class LoginController {
             LoginModel loginModel = new LoginModel("01", "Error: Debe completar correctamente sus credenciales", "");
             model.addAttribute("loginModel", loginModel);
             return "inicio";
-        }
+
+        } // fin de la validación
+
+        // Invocar servicio de autenticación
 
         LoginModel loginModel = new LoginModel("00", "", "Jeiler Vargas");
         model.addAttribute("loginModel", loginModel);
